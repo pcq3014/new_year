@@ -1,50 +1,56 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
-} 
+}
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
     font-weight: normal;
 }
 
-body{
+body {
     background-color: black;
 }
-#happy, #newyear{
+
+#text, #happy, #newyear, #custom-message {
     position: absolute;
     margin: 0;
     padding: 0;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
     text-shadow: 0 0 50px #974E9E;
     z-index: 1;
 }
-#happy:after,#newyear:after{
+
+#text:after, #happy:after, #newyear:after, #custom-message:after {
     content: attr(data-text);
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     z-index: -1;
     text-align: center;
-    color:#974E9E;
+    color: #974E9E;
     filter: blur(30px);
-} 
-#happy{
+}
+
+#text, #happy {
     top: 30%;
     left: 50%;
     font-family: 'Marck Script', cursive;
     font-size: 72px;
-    letter-spacing: 12px; 
+    letter-spacing: 12px;
 }
-#happy:after{
+
+#text:after, #happy:after {
     font-size: 108px;
 }
-#happy:before{
-    content:'';
+
+#text:before, #happy:before {
+    content: '';
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -53,13 +59,40 @@ body{
     opacity: 0.5;
     filter: blur(50px);
 }
-#newyear{
+
+#newyear {
     top: 60%;
     left: 50%;
     font-family: 'Antonio', sans-serif;
     font-size: 60px;
     letter-spacing: 18px;
 }
-#newyear:after{
+
+#newyear:after {
     font-size: 120px;
+}
+
+/* Thêm CSS cho lời chúc riêng */
+#custom-message {
+    top: 80%;
+    left: 50%;
+    font-family: 'Marck Script', cursive;
+    font-size: 48px;
+    letter-spacing: 8px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFA500;
+    text-shadow: 0 0 30px #FFA500;
+}
+
+#custom-message:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    text-align: center;
+    color: #FFA500;
+    filter: blur(20px);
 }
